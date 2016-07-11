@@ -122,7 +122,7 @@ public class ActionHandler {
     public static final String SYSTEMUI_TASK_SOUNDMODE_VIB_SILENT = "task_soundmode_vib_silent";
     public static final String SYSTEMUI_TASK_WAKE_DEVICE = "task_wake_device";
     public static final String SYSTEMUI_TASK_STOP_SCREENPINNING = "task_stop_screenpinning";
-    public static final String SYSTEMUI_TASK_CLEAR_NOTIFICATIONS = "task_clear_notifications";
+    public static final String SYSTEMUI_TASK_NOTIFICATION_CLEAR = "task_notification_clear";
     public static final String SYSTEMUI_TASK_VOLUME_PANEL = "task_volume_panel";
     public static final String SYSTEMUI_TASK_EDITING_SMARTBAR = "task_editing_smartbar";
 
@@ -160,7 +160,7 @@ public class ActionHandler {
         ImeArrowLeft(SYSTEMUI_TASK_IME_NAVIGATION_LEFT, SYSTEMUI, "label_action_ime_left", "ic_sysbar_ime_left"),
         ImeArrowRight(SYSTEMUI_TASK_IME_NAVIGATION_RIGHT, SYSTEMUI, "label_action_ime_right", "ic_sysbar_ime_right"),
         ImeArrowUp(SYSTEMUI_TASK_IME_NAVIGATION_UP, SYSTEMUI, "label_action_ime_up", "ic_sysbar_ime_up"),
-        ClearNotifications(SYSTEMUI_TASK_CLEAR_NOTIFICATIONS, SYSTEMUI, "label_action_clear_notifications", "ic_sysbar_clear_notifications"),
+        NotificationClear(SYSTEMUI_TASK_NOTIFICATION_CLEAR, SYSTEMUI, "label_action_notification_clear", "ic_qs_clear_notifications"),
         VolumePanel(SYSTEMUI_TASK_VOLUME_PANEL, SYSTEMUI, "label_action_volume_panel", "ic_sysbar_volume_panel"),
         EditingSmartbar(SYSTEMUI_TASK_EDITING_SMARTBAR, SYSTEMUI, "label_action_editing_smartbar", "ic_sysbar_editing_smartbar");
 
@@ -199,7 +199,7 @@ public class ActionHandler {
             SystemAction.StopScreenPinning, SystemAction.ImeArrowDown,
             SystemAction.ImeArrowLeft, SystemAction.ImeArrowRight,
             SystemAction.ImeArrowUp, SystemAction.InAppSearch,
-            SystemAction.VolumePanel, SystemAction.ClearNotifications,
+            SystemAction.NotificationClear, SystemAction.VolumePanel,
             SystemAction.EditingSmartbar
     };
 
@@ -583,7 +583,7 @@ public class ActionHandler {
                 }
             }
             return;
-        } else if (action.equals(SYSTEMUI_TASK_CLEAR_NOTIFICATIONS)) {
+        } else if (action.equals(SYSTEMUI_TASK_NOTIFICATION_CLEAR)) {
             StatusBarHelper.clearAllNotifications();
             return;
         } else if (action.equals(SYSTEMUI_TASK_VOLUME_PANEL)) {
